@@ -11,6 +11,7 @@ reto-blockchain
 └── doc
     ├── documentacion.pdf
 ````
+o descargar desde la aplicación.
 
 ### Link de la app
 <https://reto-blockchain.streamlit.app/>
