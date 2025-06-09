@@ -52,11 +52,11 @@ if pags == "Inicio":
         
         st.subheader("Descargar documentación")
         if st.button("Descargar documentación"):
-            with open("docs/Documentación.pdf", "rb") as f:
+            with open("docs/documentacion.pdf", "rb") as f:
                 st.download_button(
                     label="Descargar PDF",
                     data=f,
-                    file_name="Documentación.pdf",
+                    file_name="Documentación_blockchain.pdf",
                     mime="application/pdf"
                 )
 
