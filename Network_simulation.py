@@ -51,14 +51,13 @@ if pags == "Inicio":
             st.success(st.session_state['mensaje_exito'])    
         
         st.subheader("Descargar documentación")
-        if st.button("Descargar documentación"):
-            with open("docs/documentacion.pdf", "rb") as f:
-                st.download_button(
-                    label="Descargar PDF",
-                    data=f,
-                    file_name="Documentación_blockchain.pdf",
-                    mime="application/pdf"
-                )
+        with open("docs/documentacion.pdf", "rb") as f:
+            st.download_button(
+                label="Descargar PDF",
+                data=f,
+                file_name="Documentación_blockchain.pdf",
+                mime="application/pdf"
+            )
 
 if pags == "Resumen":
     if 'sistema' not in st.session_state:
