@@ -49,7 +49,16 @@ if pags == "Inicio":
             st.session_state['sistema'] = sistema_cargado
             st.session_state['mensaje_exito'] = "Sistema cargado con éxito."
             st.success(st.session_state['mensaje_exito'])    
-
+        
+        st.subheader("Descargar documentación")
+        if st.button("Descargar documentación"):
+            with open("docs/Documentación.pdf", "rb") as f:
+                st.download_button(
+                    label="Descargar PDF",
+                    data=f,
+                    file_name="Documentación.pdf",
+                    mime="application/pdf"
+                )
 
 if pags == "Resumen":
     if 'sistema' not in st.session_state:
