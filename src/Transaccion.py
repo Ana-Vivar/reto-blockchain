@@ -8,11 +8,12 @@ class Transaccion:
         Parámetros:
             idx: Índice de la transacción, utilizado para identificarla de manera única.
             sistema: Sistema de blockchain al que pertenece la transacción, contiene el conjunto de UTXOs.
-            emisor: Usuario que envía la transacción, debe tener suficientes UTXOs.
+            emisor: Usuario que envía la transacción, None si es una transacción coinbase.
             receptor: Usuario que recibe la transacción, se le asignará un nuevo UTXO.
             dir_emisor: Dirección del emisor, se obtiene del usuario.
             dir_receptor: Dirección del receptor, se obtiene del usuario.
-            cantidad: Cantidad de monedas.
+            mining_fee: Tarifa de minería, se suma al total de la transacción.
+            cantidad: Cantidad de monedas que se transfieren en la transacción.
             UTXOs_set: Conjunto de UTXOs del sistema, utilizado para verificar y actualizar los UTXOs.
         Métodos:
             lista_UTXO_emisor: Crea una lista de UTXOs del emisor.
@@ -21,7 +22,10 @@ class Transaccion:
             crear_txid: Crea un identificador único para la transacción.
             firmar_tx: Firma la transacción con la llave privada del emisor.
             verificar_firma: Verifica la firma de la transacción con la llave pública del emisor.
-            hacer_tx: Realiza la transacción, actualizando el sistema y los UTXOs.
+            validar_y_preparar_tx: Valida la transacción y la prepara para enviar a la mempool (sin tocar UTXOs_set).
+            aplicar_tx: Aplica los cambios en el UTXOs_set (se llama solo cuando la tx se mina).
+            hacer_tx: Realiza la transacción, actualizando el sistema y los UTXOs (solo se utiliza para crear el bloque genesis).
+            crear_dict: Crea un diccionario con los atributos de la transacción.
     """
     def __init__(self, idx, emisor, receptor, cantidad, sistema):
 

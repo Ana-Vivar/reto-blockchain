@@ -127,7 +127,7 @@ elif pags == "Transacciones":
 
         # comision = st.write(f"**Comisión de minería:** {sistema.mining_fee}")
 
-        if st.button("Enviar Transacción"):
+        if st.button("Enviar transacción"):
             emisor = sistema.usuarios[int(emisor_select.split()[1])]
             receptor = sistema.usuarios[int(receptor_select.split()[1])]
             exito = sistema.procesar_tx(emisor, receptor, cantidad)
@@ -156,7 +156,7 @@ elif pags == "Minería":
         mineros = [f'Usuario {usuario.idx}' for usuario in sistema.usuarios]
         minero_select = st.selectbox("Selecciona un minero:", mineros)
 
-        if st.button("Minar Bloque"):
+        if st.button("Minar bloque"):
             minero = sistema.usuarios[int(minero_select.split()[1])]
             bloque = sistema.minar_bloque(minero)
 

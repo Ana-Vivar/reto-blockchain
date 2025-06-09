@@ -3,6 +3,17 @@ from datetime import datetime
 import json
 
 class Bloque:
+    """
+    Clase que representa un bloque en la cadena de bloques.
+    Parámetros:
+        idx: Índice del bloque, utilizado para identificarlo de manera única.
+        transacciones: Lista de transacciones incluidas en el bloque.
+        previous_hash: Hash del bloque anterior, utilizado para enlazar los bloques.
+        
+    Métodos:
+        crear_dict: Crea un diccionario con los atributos del bloque.
+        calcular_hash: Calcula el hash del bloque utilizando sus atributos.
+    """
     def __init__(self, idx, transacciones, previous_hash):
 
         self.idx = idx

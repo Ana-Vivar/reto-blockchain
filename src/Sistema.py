@@ -34,6 +34,7 @@ class Sistema:
         get_mining_fees: Calcula las tarifas de minería acumuladas en la mempool.
         minar_bloque: Minera un bloque y lo agrega a la cadena de bloques.
         crear_bloque_genesis: Crea el bloque génesis y el usuario génesis.
+        crear_json: Crea un diccionario con los atributos del sistema.
     """
     
     def __init__(self, dificultad=4):
